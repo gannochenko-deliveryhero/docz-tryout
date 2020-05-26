@@ -1,0 +1,33 @@
+---
+name: Message
+menu: Components
+route: /components/message
+---
+
+import { Playground, Props } from 'docz';
+import { Message, Button } from '@deliveryhero/armor';
+
+# Alert
+
+## Properties
+
+<Props of={Button} />
+
+## Basic usage
+
+<Playground>
+    <Message>Some message</Message>
+</Playground>
+
+## Using different kinds
+
+<Playground>
+    <Message info>Some message</Message>
+    <Message success>Some message</Message>
+    <Message warning>Some message</Message>
+    <Message error>Some message</Message>
+</Playground>
+
+~~~typescript
+const foo: string = '10';
+~~~

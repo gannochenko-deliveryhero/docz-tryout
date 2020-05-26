@@ -1,0 +1,21 @@
+{
+    "name": "docz-example-basic",
+    "version": "2.0.0",
+    "license": "MIT",
+    "scripts": {
+        "dev": "docz dev",
+        "build": "docz build",
+        "serve": "docz serve"
+    },
+    "dependencies": {
+        "@deliveryhero/armor": "^1.2.0",
+        "docz": "latest",
+        "prop-types": "^15.7.2",
+        "react": "^16.11.0",
+        "react-dom": "^16.11.0",
+        "styled-components": "^5.1.0"
+    },
+    "devDependencies": {
+        "docz-utils": "^2.3.0"
+    }
+}
