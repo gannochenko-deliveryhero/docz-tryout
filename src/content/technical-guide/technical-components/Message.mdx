@@ -1,26 +1,19 @@
 ---
 name: Message
-menu: Components
-route: /components/message
+menu: Technical components
+route: /technical-guide/technical-components/message/
 ---
 
 import { Playground, Props } from 'docz';
-import { PropsAlt } from '../helpers/PropsAlt';
-import { Alert } from '../helpers/Alert';
-import { Message, Button } from '@deliveryhero/armor';
+import { Message } from '@deliveryhero/armor';
 
-# Alert
+# Message
 
 ## Properties
 
 <Props of={Message} />
 
 ## Basic usage
-
-![lalala](../../public/rick.jpg)
-
-<PropsAlt />
-<Alert />
 
 <Playground>
     <Message>Some message</Message>
@@ -34,7 +27,3 @@ import { Message, Button } from '@deliveryhero/armor';
     <Message warning>Some message</Message>
     <Message error>Some message</Message>
 </Playground>
-
-~~~typescript
-const foo: string = '10';
-~~~

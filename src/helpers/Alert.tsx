@@ -8,7 +8,11 @@ const kinds = {
     warning: '#FFA502',
 };
 
-export const Alert = ({ children, kind, ...rest }) => (
+type Props = {
+    kind: { [k: string]: string };
+} & { [k: string]: string };
+
+export const Alert = ({ children, kind, ...rest }: Props) => (
     <div
         style={{
             padding: 20,
@@ -24,11 +28,17 @@ export const Alert = ({ children, kind, ...rest }) => (
     </div>
 );
 
+const annotate = (type: any, label: string) => {
+    type.label = label;
+
+    return type;
+};
+
 Alert.propTypes = {
     /**
      * The kind prop is used to set the alert's background color
      */
-    kind: t.oneOf(['info', 'positive', 'negative', 'warning']),
+    kind: annotate(t.oneOf(['info', 'positive', 'negative', 'warning']), 'Kind of'),
 };
 
 Alert.defaultProps = {
