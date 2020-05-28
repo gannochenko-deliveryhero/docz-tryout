@@ -1,10 +1,7 @@
 import {useMemo} from "react";
 
 export const useMenuAlt = (menus) => useMemo(() => {
-
-    console.log(menus);
-
-    const structure = { menu: {} };
+    const structure = { menu: [] };
 
     menus.forEach((menuItem) => {
         let path = [];
@@ -14,22 +11,38 @@ export const useMenuAlt = (menus) => useMemo(() => {
 
         let pointer = structure;
         path.forEach(pathItem => {
-            
-            if (!pointer.menu[pathItem]) {
-                pointer.menu[pathItem] = {
+
+            let currentItem = pointer.menu.find(item => item.name === pathItem);
+            if (!currentItem) {
+                const id = Math.round(Math.random() * 10000).toString();
+                currentItem = {
                     name: pathItem,
-                    id: 'blah',
-                    menu: {},
+                    id,
+                    slug: id,
+                    menu: [],
                 };
+
+                pointer.menu.push(currentItem);
             }
 
-            pointer = pointer.menu[pathItem];
+            pointer = currentItem;
         });
 
-        pointer.menu[menuItem.id] = menuItem;
+        pointer.menu.push(menuItem);
     });
 
-    console.log(structure);
-
-    return menus;
+    return structure.menu;
 }, [ menus ]);
+
+
+// filepath: "src/content/technical-guide/technical-components/Message.mdx"
+// fullpath: "/Users/s.gannochenko/proj/tryouts/docz/src/content/technical-guide/technical-components/Message.mdx"
+// headings: (4) [{…}, {…}, {…}, {…}]
+// hidden: false
+// id: "b51a16bea95e0eaa682ebd484f1ac835"
+// link: ""
+// menuChain: "Technical guide, Components"
+// name: "Message"
+// parent: undefined
+// route: "/technical-guide/technical-components/message/"
+// slug: "src-content-technical-guide-technical-components-message"

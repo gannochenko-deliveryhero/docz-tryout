@@ -36,7 +36,10 @@ export const NavGroup = ({ item, sidebarRef }) => {
                   {menu.name}
                 </NavLink>
               )
+            } else if (menu.menu) {
+                return <NavGroup key={menu.id} item={menu} sidebarRef={sidebarRef} />
             }
+
             return (
               <NavLink key={menu.id} item={menu}>
                 {menu.name}
