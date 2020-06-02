@@ -3,6 +3,9 @@ import {useMemo} from "react";
 export const useMenuAlt = (menus) => useMemo(() => {
     const structure = { menu: [] };
 
+    console.log('menus');
+    console.log(menus);
+
     menus.forEach((menuItem) => {
         let path = [];
         if (menuItem.menuChain) {
@@ -33,7 +36,6 @@ export const useMenuAlt = (menus) => useMemo(() => {
 
     return structure.menu;
 }, [ menus ]);
-
 
 // filepath: "src/content/technical-guide/technical-components/Message.mdx"
 // fullpath: "/Users/s.gannochenko/proj/tryouts/docz/src/content/technical-guide/technical-components/Message.mdx"
